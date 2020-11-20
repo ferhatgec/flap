@@ -6,6 +6,7 @@
 # 
 </
 
+except(version) : 0.3 -> { error("Install latest version of FlaScript") print(newline) } version;
 
 />
 	** Note: This project just for testing, hobby and for fun!
@@ -32,6 +33,9 @@
 main() -> main {
 	var(string) -> test.flap -> flap_file <-
 	var(string) ->    -> flap_data <-
+
+	print(string) -> "File: "
+	@input -> flap_file <-
 
 	statement[#readline]
 } main;
