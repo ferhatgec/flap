@@ -12,6 +12,16 @@ except(version) : 0.3 -> { error("Install latest version of FlaScript") print(ne
 	** Note: This project just for testing, hobby and for fun!
 </
 
+#is_title ->
+	if[find(var(flap_data), "title ")] -> {
+		@substring -> flap_data -> title " <
+		
+		@pop_back -> flap_data <
+
+		print(dynamic) -> set[title] -> var(flap_data) <-
+	} else -> { executepp("Flap", var(flap_data)) } <-
+#is_title <-
+
 #is_print ->
 	if[find(var(flap_data), "print ")] -> {
 		@substring -> flap_data -> print " <
@@ -21,7 +31,7 @@ except(version) : 0.3 -> { error("Install latest version of FlaScript") print(ne
 		@escape_seq -> flap_data <
 
 		@echo -> flap_data <-
-	} else -> { executepp("Flap", var(flap_data)) } <-
+	} else -> { statement[#is_title] } <-
 #is_print <-
 
 #readline ->
