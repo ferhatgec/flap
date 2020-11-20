@@ -1,1 +1,1 @@
-print Hello, Flap!
+print "Hello, Flap!\n"

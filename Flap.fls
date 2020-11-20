@@ -6,16 +6,21 @@
 # 
 </
 
+
 />
 	** Note: This project just for testing, hobby and for fun!
 </
 
 #is_print ->
 	if[find(var(flap_data), "print ")] -> {
-		@substring -> flap_data -> print  <
+		@substring -> flap_data -> print " <
+		
+		@pop_back -> flap_data <
+
+		@escape_seq -> flap_data <
 
 		@echo -> flap_data <-
-	} else -> { } <-
+	} else -> { } <-	
 #is_print <-
 
 #readline ->
