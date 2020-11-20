@@ -1,1 +1,3 @@
 print "Hello, Flap!\n"
+
+fla --v

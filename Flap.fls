@@ -21,7 +21,7 @@ except(version) : 0.3 -> { error("Install latest version of FlaScript") print(ne
 		@escape_seq -> flap_data <
 
 		@echo -> flap_data <-
-	} else -> { } <-	
+	} else -> { executepp("Flap", var(flap_data)) } <-
 #is_print <-
 
 #readline ->
